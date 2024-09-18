@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sriyog_app/navigation_menu.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -9,11 +10,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Sriyog App',
       home: Scaffold(
-        body: Center(
-          child: CircularProgressIndicator(
-            color: Colors.blue,
-          ),
-        ),
+        body: NavigationMenu(),
       ),
     );
   }
