@@ -4,7 +4,7 @@ import 'package:sriyog_app/utils/theme/custom_theme/outlined_button_theme.dart';
 import 'package:sriyog_app/utils/theme/custom_theme/text_field_theme.dart';
 import 'package:sriyog_app/utils/theme/custom_theme/text_theme.dart';
 
-class SrAppTheme {
+class SpAppTheme {
   static ThemeData lightTheme = ThemeData(
       useMaterial3: true,
       fontFamily: 'Poppins',
