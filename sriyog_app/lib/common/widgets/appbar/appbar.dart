@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:pr_store/utils/constants/colors.dart';
-import 'package:pr_store/utils/devices/devices_utility.dart';
-import 'package:pr_store/utils/helpers/helper.dart';
-
 import '../../../utils/constants/sizes.dart';
+import '../../../utils/devices/device_utility.dart';
+import '../../../utils/helpers/helper.dart';
 
 class SpAppBar extends StatelessWidget implements PreferredSizeWidget {
   const SpAppBar(
@@ -24,25 +21,25 @@ class SpAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = PrHelper.isDarkMode(context);
+    final isDark = SpHelper.isDarkMode(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: PrSizes.md),
+      padding: const EdgeInsets.symmetric(horizontal: SpSizes.md),
       child: AppBar(
         automaticallyImplyLeading: false,
         systemOverlayStyle: isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
         leading: showBackArrow
             ? IconButton(
-                onPressed: () => Get.back(),
+                onPressed: () => Navigator.pop,
                 icon: Icon(
                   Iconsax.arrow_left,
-                  color: isDark ? PrColor.white : PrColor.black,
+                  color: isDark ? Colors.white : Colors.black,
                 ))
             : leadingIcon != null
                 ? IconButton(
                     onPressed: leadingOnPressed,
                     icon: Icon(
                       leadingIcon,
-                      color: isDark ? PrColor.white : PrColor.black,
+                      color: isDark ? Colors.white : Colors.black,
                     ))
                 : null,
         title: title,
@@ -52,5 +49,5 @@ class SpAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(PrDeviceUtils.getAppBarHeight());
+  Size get preferredSize => Size.fromHeight(SpDeviceUtils.getAppBarHeight());
 }
