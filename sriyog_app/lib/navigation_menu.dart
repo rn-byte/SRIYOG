@@ -11,7 +11,7 @@ class NavigationMenu extends StatelessWidget {
       bottomNavigationBar: NavigationBar(
           height: 60,
           elevation: 0,
-          backgroundColor: isDark ? Colors.black : Colors.white,
+          backgroundColor: isDark ? Colors.grey[900] : Colors.grey[200],
           indicatorColor: isDark ? Colors.grey.withOpacity(0.6) : Colors.grey[300],
           destinations: const [
             NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Home'),
