@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:sriyog_app/features/authentication/screen/splash/choose_country.dart';
+import 'package:sriyog_app/features/authentication/screen/splash/p_of_the_day.dart';
 import 'package:sriyog_app/utils/helpers/helper.dart';
 
 import '../../../../utils/constants/colors.dart';
@@ -24,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
       () => Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const ChooseCountryScreen(),
+            builder: (context) => const ProfessionOfTheDay(),
           )),
     );
   }

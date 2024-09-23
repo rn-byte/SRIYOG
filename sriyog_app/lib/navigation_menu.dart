@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:sriyog_app/utils/constants/colors.dart';
 import 'package:sriyog_app/utils/helpers/helper.dart';
@@ -37,8 +38,7 @@ class NavigationMenu extends StatelessWidget {
                   ),
                   label: ''),
               const NavigationDestination(icon: Icon(Icons.search_rounded), label: 'Search'),
-              const NavigationDestination(
-                  icon: Icon(Icons.contact_phone_outlined), label: 'Contacts'),
+              const NavigationDestination(icon: Icon(FontAwesomeIcons.phone), label: 'Contacts'),
             ]),
       ),
       body: Obx(() => controller.screen[controller.selectedIndex.value]),
