@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:sriyog_app/features/authentication/screen/splash/second_splash.dart';
+import 'package:sriyog_app/features/authentication/screen/splash/choose_country.dart';
 import 'package:sriyog_app/utils/helpers/helper.dart';
 
 import '../../../../utils/constants/colors.dart';
@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
       () => Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const SecondSplashScreen(),
+            builder: (context) => const ChooseCountryScreen(),
           )),
     );
   }
@@ -34,10 +34,10 @@ class _SplashScreenState extends State<SplashScreen> {
     final isDark = SpHelper.isDarkMode(context);
     return Scaffold(
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
           height: double.infinity,
           width: double.infinity,
-          color: isDark ? Colors.black : Colors.white,
+          //color: isDark ? Colors.black : Colors.white,
           child: Center(
             child: SizedBox(
               height: double.infinity,
