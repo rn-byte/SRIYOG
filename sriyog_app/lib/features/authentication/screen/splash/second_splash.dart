@@ -16,41 +16,46 @@ class SecondSplashScreen extends StatelessWidget {
           height: double.infinity,
           width: double.infinity,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            //crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-              CircleAvatar(
-                foregroundImage: const AssetImage(SpImage.user1),
-                backgroundColor: Colors.grey[500],
-                radius: 50,
+              SizedBox(height: MediaQuery.of(context).size.height * 0.2),
+              Column(
+                children: [
+                  CircleAvatar(
+                    foregroundImage: const AssetImage(SpImage.user1),
+                    backgroundColor: Colors.grey[500],
+                    radius: 50,
+                  ),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.15),
+                  Text(
+                    'Verified Professional Marketplace',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  Text(
+                    '100K+ Downloads',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+                  SizedBox(
+                      width: 150,
+                      height: 50,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'ENTER',
+                          ))),
+                ],
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.19),
-              Text(
-                'Verified Professional Marketplace',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-              Text(
-                '100K+ Downloads',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-              SizedBox(
-                  width: 150,
-                  height: 50,
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'ENTER',
-                      ))),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+              //SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+              const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Image(
-                    image: AssetImage(SpImage.rocket),
+                  Image(
+                    image: const AssetImage(SpImage.rocket),
                     height: 40,
                     width: 40,
+                    color: isDark ? SpColor.grey : SpColor.darkerGrey,
                   ),
                   const SizedBox(width: 8),
                   Container(
@@ -85,6 +90,7 @@ class SecondSplashScreen extends StatelessWidget {
                 'Proudly Made in The cloud',
                 style: TextStyle(fontSize: 23, fontWeight: FontWeight.w100),
               ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.06)
             ],
           ),
         ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sriyog_app/common/widgets/texts/section_heading.dart';
-import 'package:sriyog_app/utils/helpers/helper.dart';
 import '../../../../../common/widgets/layout/vertical_image_text.dart';
 import '../../../../../utils/constants/image_string.dart';
 import '../../../../../utils/constants/sizes.dart';
@@ -12,7 +11,7 @@ class SpTopProfession extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isDark = SpHelper.isDarkMode(context);
+    //final bool isDark = SpHelper.isDarkMode(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,

@@ -1,8 +1,11 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:sriyog_app/navigation_menu.dart';
+import 'package:sriyog_app/features/authentication/screen/splash/second_splash.dart';
 import 'package:sriyog_app/utils/helpers/helper.dart';
+
+import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/image_string.dart';
+import 'widgets/arrow_widget.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -21,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
       () => Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const NavigationMenu(),
+            builder: (context) => const SecondSplashScreen(),
           )),
     );
   }
@@ -35,33 +38,82 @@ class _SplashScreenState extends State<SplashScreen> {
           height: double.infinity,
           width: double.infinity,
           color: isDark ? Colors.black : Colors.white,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const SizedBox(),
-              Column(
+          child: Center(
+            child: SizedBox(
+              height: double.infinity,
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
-                    'Sriyog',
-                    style: Theme.of(context).textTheme.displayMedium!.apply(color: Colors.grey),
+                  // const SizedBox(),
+                  Column(
+                    children: [
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.3),
+                      Text(
+                        'Sriyog',
+                        style: Theme.of(context).textTheme.displayMedium,
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Connecting Work with Worker !',
+                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                              fontStyle: FontStyle.italic,
+                            ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
-                  const SizedBox(
-                    height: 50,
-                  )
+                  // SizedBox(height: MediaQuery.of(context).size.height * 0.5),
+                  const Spacer(),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image(
+                        image: const AssetImage(SpImage.rocket),
+                        height: 40,
+                        width: 40,
+                        color: isDark ? SpColor.grey : SpColor.darkerGrey,
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        width: 1,
+                        height: 30,
+                        color: Colors.grey,
+                      ),
+                      const SizedBox(width: 8),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Powered By',
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
+                          Text(
+                            'Microsoft for Startups',
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    child: CustomPaint(
+                      size: const Size(250, 25),
+                      painter: ArrowLinePainter(arrowColor: isDark ? SpColor.white : SpColor.black),
+                    ),
+                  ),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+                  const Text(
+                    'Proudly Made in The cloud',
+                    style: TextStyle(fontSize: 23, fontWeight: FontWeight.w100),
+                  ),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.06)
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 40.0),
-                child: Text(
-                  'Connecting Work with Worker !',
-                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        color: Colors.grey,
-                        fontStyle: FontStyle.italic,
-                      ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
+            ),
           ),
         ),
       ),
