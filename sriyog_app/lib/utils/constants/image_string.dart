@@ -14,6 +14,9 @@ class SpImage {
   /// professional image
   static const String user1 = "assets/images/professional/pandaC.png";
 
+  /// splash image
+  static const String rocket = "assets/images/splash/rocket.png";
+
   /// Banner Image
   static const String delhiBanner = "assets/images/banner/image.png";
   static const String ktmBanner = "assets/images/banner/ktm.jpg";
