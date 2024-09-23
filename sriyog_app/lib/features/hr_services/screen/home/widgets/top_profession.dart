@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sriyog_app/common/widgets/texts/section_heading.dart';
 import 'package:sriyog_app/utils/helpers/helper.dart';
-
-import '../../../../../common/widgets/style/vertical_image_text.dart';
+import '../../../../../common/widgets/layout/vertical_image_text.dart';
 import '../../../../../utils/constants/image_string.dart';
+import '../../../../../utils/constants/sizes.dart';
 
 class SpTopProfession extends StatelessWidget {
   const SpTopProfession({
@@ -16,28 +17,32 @@ class SpTopProfession extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(
-          "Top Profession",
-          style: Theme.of(context).textTheme.headlineSmall,
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: SpSizes.sm),
+          child: SpSectionHeading(title: 'Top Profession'),
         ),
+        const SizedBox(height: SpSizes.spaceBtwItems / 1.2),
 
         /// Top Profession
         SizedBox(
-          height: 150,
+          height: 100,
           child: ListView.separated(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return SpVerticalImageText(
+                  height: 65,
+                  width: 65,
                   image: SpImage.plumber,
                   title: 'Plumber',
-                  background: isDark ? Colors.white : Colors.black,
+                  //background: isDark ? SpColor.white : Colors.black,
+                  borderRadius: BorderRadius.circular(50),
                 );
               },
               separatorBuilder: (context, index) => const SizedBox(
-                    width: 5,
+                    width: SpSizes.md,
                   ),
-              itemCount: 5),
+              itemCount: 8),
         )
       ],
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sriyog_app/utils/constants/image_string.dart';
 
 class SpHomeBanner extends StatelessWidget {
   const SpHomeBanner({
@@ -13,7 +14,7 @@ class SpHomeBanner extends StatelessWidget {
           height: MediaQuery.of(context).size.height * 0.27,
           width: double.infinity,
           child: Image.asset(
-            'assets/images/banner/image.png',
+            SpImage.ktmBanner,
             fit: BoxFit.cover,
           ),
         ),

@@ -11,10 +11,10 @@ class SpAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.showBackArrow = false,
       this.actions,
       this.leadingOnPressed,
-      this.leadingIcon});
+      this.imageIcon});
   final Widget? title;
   final bool showBackArrow;
-  final IconData? leadingIcon;
+  final Widget? imageIcon;
   final List<Widget>? actions;
   final VoidCallback? leadingOnPressed;
 
@@ -34,14 +34,7 @@ class SpAppBar extends StatelessWidget implements PreferredSizeWidget {
                   Iconsax.arrow_left,
                   color: isDark ? Colors.white : Colors.black,
                 ))
-            : leadingIcon != null
-                ? IconButton(
-                    onPressed: leadingOnPressed,
-                    icon: Icon(
-                      leadingIcon,
-                      color: isDark ? Colors.white : Colors.black,
-                    ))
-                : null,
+            : imageIcon,
         title: title,
         actions: actions,
       ),

@@ -30,14 +30,38 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     final isDark = SpHelper.isDarkMode(context);
     return Scaffold(
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        color: isDark ? Colors.black : Colors.white,
-        child: Center(
-          child: Text(
-            'Sriyog',
-            style: Theme.of(context).textTheme.displayMedium!.apply(color: Colors.grey),
+      body: SafeArea(
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          color: isDark ? Colors.black : Colors.white,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const SizedBox(),
+              Column(
+                children: [
+                  Text(
+                    'Sriyog',
+                    style: Theme.of(context).textTheme.displayMedium!.apply(color: Colors.grey),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  )
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 40.0),
+                child: Text(
+                  'Connecting Work with Worker !',
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        color: Colors.grey,
+                        fontStyle: FontStyle.italic,
+                      ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
           ),
         ),
       ),

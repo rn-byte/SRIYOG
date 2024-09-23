@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sriyog_app/utils/helpers/helper.dart';
 
+import 'features/hr_services/screen/contacts/contacts.dart';
 import 'features/hr_services/screen/home/home.dart';
+import 'features/hr_services/screen/profession/profession.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -24,9 +26,12 @@ class NavigationMenu extends StatelessWidget {
               NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Home'),
               NavigationDestination(icon: Icon(Icons.work_outline), label: 'Professions'),
               NavigationDestination(
-                  icon: Icon(
-                    Icons.add,
-                    size: 30,
+                  icon: Padding(
+                    padding: EdgeInsets.all(15),
+                    child: Icon(
+                      Icons.add_circle,
+                      size: 50,
+                    ),
                   ),
                   label: ''),
               NavigationDestination(icon: Icon(Icons.search_rounded), label: 'Search'),
@@ -42,9 +47,9 @@ class NavigationController extends GetxController {
   RxInt selectedIndex = 0.obs;
   final screen = [
     const SpHomeScreen(),
+    const SpProfressionScreen(),
     const SpHomeScreen(),
     const SpHomeScreen(),
-    const SpHomeScreen(),
-    const SpHomeScreen(),
+    const SpContactScreen(),
   ];
 }
