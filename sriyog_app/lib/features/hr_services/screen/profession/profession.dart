@@ -20,6 +20,7 @@ class SpProfressionScreen extends StatelessWidget {
         child: Column(
           children: [
             DropdownButtonFormField(
+              hint: const Text('Choose Profession'),
               // decoration: const InputDecoration(prefixIcon: Icon(Iconsax.sort)),
               onChanged: (value) {},
               items: [

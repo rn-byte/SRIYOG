@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sriyog_app/utils/constants/colors.dart';
 import 'package:sriyog_app/utils/helpers/helper.dart';
 
 import 'features/hr_services/screen/contacts/contacts.dart';
@@ -22,20 +23,22 @@ class NavigationMenu extends StatelessWidget {
             indicatorColor: isDark ? Colors.grey.withOpacity(0.6) : Colors.grey[400],
             selectedIndex: controller.selectedIndex.value,
             onDestinationSelected: (value) => controller.selectedIndex.value = value,
-            destinations: const [
-              NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Home'),
-              NavigationDestination(icon: Icon(Icons.work_outline), label: 'Professions'),
+            destinations: [
+              const NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Home'),
+              const NavigationDestination(icon: Icon(Icons.work_outline), label: 'Professions'),
               NavigationDestination(
                   icon: Padding(
-                    padding: EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(13),
                     child: Icon(
                       Icons.add_circle,
                       size: 50,
+                      color: isDark ? SpColor.darkGrey : SpColor.darkerGrey,
                     ),
                   ),
                   label: ''),
-              NavigationDestination(icon: Icon(Icons.search_rounded), label: 'Search'),
-              NavigationDestination(icon: Icon(Icons.contact_phone_outlined), label: 'Contacts'),
+              const NavigationDestination(icon: Icon(Icons.search_rounded), label: 'Search'),
+              const NavigationDestination(
+                  icon: Icon(Icons.contact_phone_outlined), label: 'Contacts'),
             ]),
       ),
       body: Obx(() => controller.screen[controller.selectedIndex.value]),

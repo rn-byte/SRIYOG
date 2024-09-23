@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sriyog_app/features/authentication/screen/splash/choose_city.dart';
 import 'package:sriyog_app/utils/constants/image_string.dart';
-import '../../../../common/widgets/fotter/fotter_section_widget.dart';
 
-class ChooseCountryScreen extends StatelessWidget {
-  const ChooseCountryScreen({super.key});
+class ProfessionOfTheDay extends StatelessWidget {
+  const ProfessionOfTheDay({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,9 @@ class ChooseCountryScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: MediaQuery.of(context).size.height * 0.2),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.14),
+              Text('Professional Of The Day', style: Theme.of(context).textTheme.headlineMedium),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.08),
               Column(
                 children: [
                   CircleAvatar(
@@ -35,27 +36,21 @@ class ChooseCountryScreen extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.08),
-                  SizedBox(
-                    width: 250,
-                    child: DropdownButtonFormField(
-                      hint: const Text('Select Country'),
-                      items: const [
-                        DropdownMenuItem(value: 'nepal', child: Text('Nepal')),
-                        DropdownMenuItem(value: 'india', child: Text('India')),
-                        DropdownMenuItem(value: 'china', child: Text('China')),
-                        DropdownMenuItem(value: 'bhutan', child: Text('Bhutan')),
-                      ],
-                      onChanged: (value) {},
-                    ),
-                  ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.018),
                   SizedBox(
                     width: 150,
                     height: 50,
                     child: ElevatedButton(
                       onPressed: () => Get.to(() => const ChooseCityScreen()),
-                      child: const Text(
-                        'ENTER',
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(Icons.whatshot),
+                          const Text(
+                            'Book',
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -63,7 +58,6 @@ class ChooseCountryScreen extends StatelessWidget {
               ),
               //SizedBox(height: MediaQuery.of(context).size.height * 0.1),
               const Spacer(),
-              const FotterSectionWidget(),
             ],
           ),
         ),

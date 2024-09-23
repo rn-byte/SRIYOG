@@ -21,30 +21,28 @@ class SpSectionHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = SpHelper.isDarkMode(context);
-    return Flexible(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: textColor),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-          if (showActionButton)
-            TextButton(
-                onPressed: onPressed,
-                child: Text(
-                  buttonTitle,
-                  style: Theme.of(context)
-                      .textTheme
-                      .labelLarge!
-                      .apply(color: isDark ? SpColor.white : SpColor.dark),
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                )),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: textColor),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
+        if (showActionButton)
+          TextButton(
+              onPressed: onPressed,
+              child: Text(
+                buttonTitle,
+                style: Theme.of(context)
+                    .textTheme
+                    .labelLarge!
+                    .apply(color: isDark ? SpColor.white : SpColor.dark),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+              )),
+      ],
     );
   }
 }

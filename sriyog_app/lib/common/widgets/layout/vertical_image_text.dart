@@ -30,7 +30,7 @@ class SpVerticalImageText extends StatelessWidget {
           width: width,
           padding: const EdgeInsets.all(SpSizes.sm),
           decoration: BoxDecoration(
-            color: isDark ? SpColor.darkContainer : SpColor.lightContainer,
+            color: isDark ? SpColor.lightContainer : SpColor.darkContainer,
             borderRadius: borderRadius,
           ),
           child: ClipRRect(
@@ -43,7 +43,7 @@ class SpVerticalImageText extends StatelessWidget {
         const SizedBox(height: SpSizes.sm),
         Text(
           title,
-          style: Theme.of(context).textTheme.labelSmall,
+          style: Theme.of(context).textTheme.titleSmall,
           softWrap: true,
           overflow: TextOverflow.ellipsis,
           maxLines: 1,

@@ -6,6 +6,7 @@ import '../../../../common/widgets/texts/primary_section_heading.dart';
 import 'widgets/education.dart';
 import 'widgets/home_appbar.dart';
 import 'widgets/home_banner.dart';
+import 'widgets/information_tech.dart';
 import 'widgets/repair_maintenance.dart';
 import 'widgets/top_profession.dart';
 import 'widgets/top_professional.dart';
@@ -71,12 +72,12 @@ class SpHomeScreen extends StatelessWidget {
               ),
               SpConstructionCategory(),
 
-              // /// IT and Communication Section
-              // Padding(
-              //   padding: EdgeInsets.symmetric(horizontal: SpSizes.sm),
-              //   child: SpSectionHeading(title: 'IT & Communication'),
-              // ),
-              // SpITCategory(),
+              /// IT and Communication Section
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: SpSizes.sm),
+                child: SpSectionHeading(title: 'IT & Software'),
+              ),
+              SpITCategory(),
             ],
           ),
         ),
